@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://sahayak-app.onrender.com/api/:path*"
+      "destination": "https://powerrangers-sahayak-code.onrender.com/api/:path*"
     },
     {
       "source": "/style.css",
