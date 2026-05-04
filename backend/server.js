@@ -22,12 +22,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware setup
-// Serve compiled/dev static from both src and public so pages can be reached
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'src','scripts')));
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'src',)));
-
+// Serve static files from the frontend public directory
 app.use(express.static(path.join(__dirname, '..', 'frontend', 'public')));
-app.use('/scripts', express.static(path.join(__dirname, '..', 'frontend', 'src', 'scripts')));
+app.use('/scripts', express.static(path.join(__dirname, '..', 'frontend', 'public', 'scripts')));
+app.use('/pages', express.static(path.join(__dirname, '..', 'frontend', 'public', 'pages')));
+app.use('/components', express.static(path.join(__dirname, '..', 'frontend', 'public', 'components')));
 
 app.use(express.json());
 
@@ -68,7 +67,7 @@ app.get('/', (req, res) => {
     if (fs.existsSync(publicIndex)) {
         return res.sendFile(publicIndex);
     }
-    res.sendFile(path.join(__dirname, '..', 'frontend', 'src', 'pages', 'content-generation.html'));
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'public', 'pages', 'content-generation.html'));
 });
 
 // Import authentication middleware
@@ -76,7 +75,7 @@ import { verifyToken } from './middleware/authMiddleware.js';
 
 // Handle direct page requests for HTML files in the pages directory with authentication
 app.get('/pages/:page', (req, res) => {
-    const pagePath = path.join(__dirname, '..', 'frontend', 'src', 'pages', req.params.page);
+    const pagePath = path.join(__dirname, '..', 'frontend', 'public', 'pages', req.params.page);
     if (fs.existsSync(pagePath)) {
         // Check if the page requires authentication
         // ✅ ADDED worksheet-submissions.html here
