@@ -8,36 +8,83 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
 <body class="login-page">
 
-  <div class="form-container">
-    <div class="logo-mark">⬡</div>
-    <h2>Admin Login</h2>
-    <p class="subtitle">School administration portal</p>
-
-    <div class="demo-creds">
-      <strong>Demo Credentials</strong>
-      <p>Email: <span>admin1@school.com</span></p>
-      <p>Password: <span>securepassword123</span></p>
+  <div class="login-layout">
+    <!-- Left brand panel -->
+    <div class="login-left">
+      <div class="login-brand">
+        <div class="login-brand-icon">⬡</div>
+        <span class="login-brand-name">Sahayak</span>
+      </div>
+      <h2>School administration made simple</h2>
+      <p>Manage teachers, assign classes, upload student data, and generate reports — all from one place.</p>
+      <ul class="login-features">
+        <li><span class="feat-icon">👩‍🏫</span> Add and manage teachers</li>
+        <li><span class="feat-icon">🔗</span> Assign subject & class teachers</li>
+        <li><span class="feat-icon">📤</span> Bulk upload student data via CSV</li>
+        <li><span class="feat-icon">📊</span> Generate student report cards</li>
+      </ul>
     </div>
 
-    <form id="admin-login-form" method="post">
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="admin@school.com" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="••••••••" required>
-      </div>
-      <button type="submit" class="btn">Sign In</button>
-    </form>
+    <!-- Right form panel -->
+    <div class="login-right">
+      <div class="form-container">
+        <h2>Admin Login</h2>
+        <p class="subtitle">School administration portal</p>
 
-    <p id="error-message" class="error-message"></p>
-    <a href="/">← Back to Home</a>
+        <div class="demo-creds">
+          <strong>Demo Credentials</strong>
+          <p>Email: <span>admin1@school.com</span></p>
+          <p>Password: <span>securepassword123</span></p>
+          <button type="button" class="btn demo-fill-btn" id="fill-demo-btn">↗ Use demo credentials</button>
+        </div>
+
+        <form id="admin-login-form" method="post">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="admin@school.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="toggle-pw" id="toggle-pw" aria-label="Show password">
+                <svg id="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn">Sign In</button>
+        </form>
+
+        <p id="error-message" class="error-message"></p>
+        <a href="/">← Back to Home</a>
+      </div>
+    </div>
   </div>
 
   <script src="../scripts/admin-login.js"></script>
+  <script>
+    const pw = document.getElementById('password');
+    const toggleBtn = document.getElementById('toggle-pw');
+    const eyeEl = document.getElementById('eye-icon');
+    const eyeOff = `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`;
+    const eyeOn  = `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
+
+    toggleBtn.addEventListener('click', () => {
+      const show = pw.type === 'password';
+      pw.type = show ? 'text' : 'password';
+      eyeEl.innerHTML = show ? eyeOff : eyeOn;
+    });
+
+    document.getElementById('fill-demo-btn').addEventListener('click', () => {
+      document.getElementById('email').value = 'admin1@school.com';
+      pw.type = 'text';
+      pw.value = 'securepassword123';
+      eyeEl.innerHTML = eyeOff;
+    });
+  </script>
 </body>
 </html>

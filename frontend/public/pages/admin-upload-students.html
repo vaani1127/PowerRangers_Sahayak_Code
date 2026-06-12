@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upload Students - Sahayak</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Students — Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
-<body>
-  <div id="navbar-placeholder"></div>
+<body class="app-page">
+  <script src="/scripts/loader.js"></script>
 
-  <main class="content-container">
-    <h1> Upload Student Data</h1>
+  <div class="app-layout">
+    <div id="navbar-placeholder"></div>
 
-    <section class="admin-section">
-      <h2>Bulk Add / Update Students via CSV</h2>
-      <form id="student-csv-form">
-        <label for="student-csv">Choose CSV file (columns: name, email, roll_number, class_id, section_id, parent_contact)</label>
-        <input type="file" id="student-csv" accept=".csv" required />
-        <button class="btn" id="upload-student-csv-btn" type="button">Upload CSV</button>
-      </form>
-      <p id="csv-upload-status" class="status-message"></p>
-      <div id="csv-upload-summary" class="result-box hidden"></div>
-    </section>
-  </main>
+    <main class="app-main">
+      <div class="page-header">
+        <h1>Upload Student Data</h1>
+        <p>Bulk-add or update student records by uploading a CSV file.</p>
+      </div>
+
+      <div style="max-width:560px;">
+        <div class="card">
+          <h2 style="font-size:0.82rem;font-weight:600;margin-bottom:6px;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;">CSV Format</h2>
+          <p style="font-size:0.8rem;color:var(--text-3);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border);">
+            Required columns: <code style="background:var(--surface-2);padding:2px 6px;border-radius:3px;">name, email, roll_number, class_id, section_id, parent_contact</code>
+          </p>
+          <form id="student-csv-form">
+            <div class="form-group">
+              <label for="student-csv">Choose CSV File</label>
+              <input type="file" id="student-csv" accept=".csv" required>
+            </div>
+            <button type="button" id="upload-student-csv-btn" class="btn primary-btn" style="width:100%;">Upload Students CSV</button>
+            <p id="csv-upload-status" class="status-message" style="text-align:center;margin-top:12px;"></p>
+          </form>
+          <div id="csv-upload-summary" class="hidden" style="margin-top:16px;font-size:0.82rem;color:var(--text-2);background:var(--surface-2);border-radius:8px;padding:14px;line-height:1.7;"></div>
+        </div>
+      </div>
+    </main>
+  </div>
 
   <script src="../scripts/navbar-admin.js"></script>
   <script src="../scripts/admin-upload-students.js"></script>

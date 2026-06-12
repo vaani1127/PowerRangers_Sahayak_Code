@@ -3,57 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Dashboard — Sahayak</title>
+  <title>Dashboard — Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
-<body>
-  <div id="navbar-placeholder"></div>
+<body class="app-page">
+  <script src="/scripts/loader.js"></script>
 
-  <main class="content-container">
+  <div class="app-layout">
+    <div id="navbar-placeholder"></div>
 
-    <div class="dashboard-header">
-      <div>
-        <h1>Dashboard</h1>
-        <p>Welcome back, <strong id="teacher-name">Teacher</strong></p>
+    <main class="app-main">
+
+      <div class="page-header-row">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome back, <strong id="teacher-name">Teacher</strong></p>
+        </div>
       </div>
-      <button id="logout-btn" class="btn secondary-btn">Logout</button>
-    </div>
 
-    <section id="class-teacher-section" class="admin-section" style="display:none;">
-      <h2>Class Teacher Actions</h2>
-      <div id="class-teacher-actions-container"></div>
-    </section>
-
-    <section id="syllabus-tracker-section" class="admin-section">
-      <h2>Syllabus Trackers</h2>
-      <div id="tracker-list-container">
-        <p style="color:var(--text-3); font-size:0.9rem;">Loading syllabus trackers…</p>
+      <!-- Stats (populated by JS) -->
+      <div class="stat-grid" id="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon si-purple">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="stat-value" id="stat-classes">—</div>
+          <div class="stat-label">Assigned Classes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-green">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="stat-value" id="stat-done">—</div>
+          <div class="stat-label">Chapters Done</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-amber">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-label">Total Chapters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-blue">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="stat-value" id="stat-pending">—</div>
+          <div class="stat-label">Pending Chapters</div>
+        </div>
       </div>
-    </section>
 
-    <section id="submission-review-section" class="admin-section">
-      <h2>Review Worksheet Submissions</h2>
-      <div id="submission-review-list-container">
-        <p style="color:var(--text-3); font-size:0.9rem;">Loading classes…</p>
+      <!-- Class Teacher section -->
+      <section id="class-teacher-section" style="display:none;" class="section-block">
+        <div class="section-heading">Class Teacher</div>
+        <div id="class-teacher-actions-container"></div>
+      </section>
+
+      <!-- AI Content Card -->
+      <div class="section-block">
+        <div class="section-heading">AI Tools</div>
+        <div class="action-card" onclick="window.location.href='content-generation.html'" style="max-width:340px;">
+          <div class="action-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+          </div>
+          <div>
+            <div class="action-card-title">Content Generator</div>
+            <div class="action-card-desc">Upload a PDF and generate summaries, questions, or MCQs with AI.</div>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="admin-section">
-      <h2>Content Generation</h2>
-      <p style="color:var(--text-2); margin-bottom:16px; font-size:0.9rem;">
-        Upload PDF lecture notes and let AI generate summaries and questions for your students.
-      </p>
-      <a href="content-generation.html" class="btn primary-btn">Open Generator</a>
-    </section>
+      <!-- Syllabus Trackers -->
+      <div class="section-block">
+        <div class="section-heading">Syllabus Progress</div>
+        <div id="tracker-list-container"></div>
+      </div>
 
-  </main>
+      <!-- Submission Review -->
+      <section id="submission-review-section" class="section-block">
+        <div class="section-heading">Review Worksheet Submissions</div>
+        <div id="submission-review-list-container"></div>
+      </section>
 
+    </main>
+  </div>
+
+  <script src="/scripts/theme.js"></script>
   <script src="../scripts/auth-check.js"></script>
   <script src="../scripts/navbar.js"></script>
-  <script src="../scripts/include-navbar.js"></script>
   <script src="../scripts/teacher-dashboard.js"></script>
 </body>
 </html>

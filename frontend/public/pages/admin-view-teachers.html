@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>View Teachers - Sahayak</title>
+  <title>Teachers — Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
-<body>
-  <div id="navbar-placeholder"></div>
+<body class="app-page">
+  <script src="/scripts/loader.js"></script>
 
-  <main class="content-container">
-    <!-- Page Heading -->
-    <section id="teachers-container" class="data-card">
-      <h2 class="data-title">All Teachers</h2>
+  <div class="app-layout">
+    <div id="navbar-placeholder"></div>
 
-      <div class="table-wrapper">
+    <main class="app-main">
+      <div class="page-header">
+        <h1>All Teachers</h1>
+        <p>View, search and manage registered teachers.</p>
+      </div>
+
+      <div class="table-wrap" id="teachers-container">
         <table id="teachers-table" class="data-table">
           <thead>
             <tr>
@@ -32,10 +37,10 @@
           <tbody></tbody>
         </table>
       </div>
-    </section>
-  </main>
+    </main>
+  </div>
 
-  <script src="../scripts/navbar-admin.js"></script>
+  <script src="/scripts/navbar-admin.js"></script>
   <script src="../scripts/admin-view-teachers.js"></script>
 </body>
 </html>

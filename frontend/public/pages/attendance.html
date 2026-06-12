@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance - Sahayak</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance — Sahayak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
-<body>
+<body class="app-page">
+  <script src="/scripts/loader.js"></script>
+
+  <div class="app-layout">
     <div id="navbar-placeholder"></div>
 
-    <main class="content-container">
-        <header class="dashboard-header">
-            <div>
-                <h1>Mark Attendance</h1>
-                <p>Record daily student attendance</p>
-            </div>
-            <a href="teacher-dashboard.html" class="btn secondary-btn">Back to Dashboard</a>
-        </header>
-
-        <div id="student-list-container" class="form-card">
-            <p>Loading students...</p>
+    <main class="app-main">
+      <div class="page-header-row">
+        <div>
+          <h1>Mark Attendance</h1>
+          <p>Record daily student attendance for your class</p>
         </div>
-        <button id="save-attendance-btn" class="btn primary-btn">Save Attendance</button>
-        <p id="status-message" class="status-message"></p>
-    </main>
+        <a href="teacher-dashboard.html" class="btn secondary-btn">← Dashboard</a>
+      </div>
 
-    <script src="../scripts/auth-check.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Check authentication on page load
-        checkTeacherAuth();
-    });
-    </script>
-    <script src="../scripts/navbar.js"></script>
-    <script src="../scripts/include-navbar.js"></script>
-    <script src="../scripts/attendance.js"></script>
+      <div class="card">
+        <div id="student-list-container">
+          <p style="color:var(--text-3);font-size:0.85rem;">Loading students…</p>
+        </div>
+        <button id="save-attendance-btn" class="btn primary-btn" style="margin-top:18px;" disabled>Save Attendance</button>
+        <p id="status-message" class="status-message" style="display:none;"></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="../scripts/auth-check.js"></script>
+  <script src="../scripts/navbar.js"></script>
+  <script src="../scripts/attendance.js"></script>
 </body>
 </html>

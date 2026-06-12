@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assign Teacher - Sahayak</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assign Teacher — Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css">
+  <script src="/scripts/theme.js"></script>
 </head>
-<body>
-  <div id="navbar-placeholder"></div>
+<body class="app-page">
+  <script src="/scripts/loader.js"></script>
 
-  <main class="content-container">
-    <h1> Assign Teacher to Class</h1>
+  <div class="app-layout">
+    <div id="navbar-placeholder"></div>
 
-    <form id="assign-form" class="form-card">
-      <div class="form-group">
-        <label for="teacher">Teacher:</label>
-        <select id="teacher" required>
-          <option value="">-- Select Teacher --</option>
-        </select>
+    <main class="app-main">
+      <div class="page-header">
+        <h1>Assign Teacher to Subject</h1>
+        <p>Map a teacher to a class, section and subject for the academic year.</p>
       </div>
 
-      <div class="form-group">
-        <label for="class">Class:</label>
-        <select id="class" required>
-          <option value="">-- Select Class --</option>
-        </select>
+      <div style="max-width:520px;">
+        <form id="assign-form" class="card">
+          <div class="form-group">
+            <label for="teacher">Teacher</label>
+            <select id="teacher" required>
+              <option value="">— Select Teacher —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="class">Class</label>
+            <select id="class" required>
+              <option value="">— Select Class —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="section">Section</label>
+            <select id="section" required>
+              <option value="">— Select Section —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" required>
+              <option value="">— Select Subject —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="year">Academic Year</label>
+            <select id="year" required>
+              <option value="">— Select Year —</option>
+            </select>
+          </div>
+          <button type="submit" class="btn primary-btn" style="width:100%;">Assign Teacher</button>
+          <p id="status-message" class="status-message" style="text-align:center;margin-top:12px;"></p>
+        </form>
       </div>
+    </main>
+  </div>
 
-      <div class="form-group">
-        <label for="section">Section:</label>
-        <select id="section" required>
-          <option value="">-- Select Section --</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="subject">Subject:</label>
-        <select id="subject" required>
-          <option value="">-- Select Subject --</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="year">Academic Year:</label>
-        <select id="year" required>
-          <option value="">-- Select Year --</option>
-        </select>
-      </div>
-
-      <button type="submit" class="btn"> Assign Teacher</button>
-      <p id="status-message"></p>
-    </form>
-  </main>
-
-  <!--  correct relative paths -->
   <script src="../scripts/navbar-admin.js"></script>
   <script src="../scripts/admin-assign-teacher.js"></script>
 </body>
