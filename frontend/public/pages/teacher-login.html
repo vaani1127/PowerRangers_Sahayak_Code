@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Login - Sahayak</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Login — Sahayak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="login-page">
 
-    <main class="content-container">
-        <h1>Teacher Login</h1>
-        
-        <div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #007bff;">
-            <h3 style="margin-top: 0; color: #333;">📋 Demo Credentials</h3>
-            <p style="margin: 8px 0;"><strong>Email:</strong> rohit.kapoor@school.com</p>
-            <p style="margin: 8px 0;"><strong>Password:</strong> hashedpw1</p>
-        </div>
-        
-        <form id="login-form" class="form-card">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn">Log In</button>
-        </form>
-        <p id="error-message" class="error-message"></p>
-        <a href="/">Back to Home</a>
-    </main>
+  <div class="form-container">
+    <div class="logo-mark">✦</div>
+    <h2>Teacher Login</h2>
+    <p class="subtitle">Sign in to your Sahayak account</p>
 
-    <script src="../scripts/teacher-login.js"></script>
+    <div class="demo-creds">
+      <strong>Demo Credentials</strong>
+      <p>Email: <span>rohit.kapoor@school.com</span></p>
+      <p>Password: <span>hashedpw1</span></p>
+    </div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@school.com" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+
+    <p id="error-message" class="error-message"></p>
+    <a href="/">← Back to Home</a>
+  </div>
+
+  <script src="../scripts/teacher-login.js"></script>
 </body>
 </html>

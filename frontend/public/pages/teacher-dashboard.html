@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Dashboard - Sahayak</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard — Sahayak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div id="navbar-placeholder"></div>
-    <main class="content-container">
-        <header class="dashboard-header">
-             <div>
-                <h1>Teacher Dashboard</h1>
-                <p>Welcome, <span id="teacher-name">Teacher</span>!</p>
-             </div>
-             <button id="logout-btn" class="btn secondary-btn">Logout</button>
-        </header>
+  <div id="navbar-placeholder"></div>
 
-        <section id="class-teacher-section" class="admin-section" style="display: none;">
-            <h2>Class Teacher Actions</h2>
-            <div id="class-teacher-actions-container">
-                </div>
-        </section>
-        <section id="syllabus-tracker-section">
-            <h2>Syllabus Trackers</h2>
-            <div id="tracker-list-container">
-                <p>Loading syllabus trackers...</p>
-            </div>
-        </section>
+  <main class="content-container">
 
-        <section id="submission-review-section">
-            <h2>Review Worksheet Submissions</h2>
-            <div id="submission-review-list-container">
-                <p>Loading classes...</p>
-            </div>
-        </section>
+    <div class="dashboard-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p>Welcome back, <strong id="teacher-name">Teacher</strong></p>
+      </div>
+      <button id="logout-btn" class="btn secondary-btn">Logout</button>
+    </div>
 
-            <div class="card">
-                <h2>Content Generation</h2>
-                <p>Create lesson summaries and questions from PDF notes.</p>
-                <a href="content-generation.html" class="btn primary-btn">Generate Content</a>
-            </div>
+    <section id="class-teacher-section" class="admin-section" style="display:none;">
+      <h2>Class Teacher Actions</h2>
+      <div id="class-teacher-actions-container"></div>
+    </section>
 
-        </div>
-    </main>
+    <section id="syllabus-tracker-section" class="admin-section">
+      <h2>Syllabus Trackers</h2>
+      <div id="tracker-list-container">
+        <p style="color:var(--text-3); font-size:0.9rem;">Loading syllabus trackers…</p>
+      </div>
+    </section>
 
-    <script src="../scripts/auth-check.js"></script>
-    <script>
-    // ... (existing DOMContentLoaded script)
-    </script>
-    <script src="../scripts/navbar.js"></script>
-    <script src="../scripts/include-navbar.js"></script>
-    
-    <script src="../scripts/teacher-dashboard.js"></script>
+    <section id="submission-review-section" class="admin-section">
+      <h2>Review Worksheet Submissions</h2>
+      <div id="submission-review-list-container">
+        <p style="color:var(--text-3); font-size:0.9rem;">Loading classes…</p>
+      </div>
+    </section>
+
+    <section class="admin-section">
+      <h2>Content Generation</h2>
+      <p style="color:var(--text-2); margin-bottom:16px; font-size:0.9rem;">
+        Upload PDF lecture notes and let AI generate summaries and questions for your students.
+      </p>
+      <a href="content-generation.html" class="btn primary-btn">Open Generator</a>
+    </section>
+
+  </main>
+
+  <script src="../scripts/auth-check.js"></script>
+  <script src="../scripts/navbar.js"></script>
+  <script src="../scripts/include-navbar.js"></script>
+  <script src="../scripts/teacher-dashboard.js"></script>
 </body>
 </html>

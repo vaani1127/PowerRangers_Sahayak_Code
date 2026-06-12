@@ -3,30 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - Sahayak</title>
+  <title>Admin Dashboard — Sahayak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div id="navbar-placeholder"></div>
 
   <main class="content-container">
-    <header class="dashboard-header">
-      <h1>Welcome, Admin</h1>
-      <p>Manage your school data easily below.</p>
-    </header>
+
+    <div class="dashboard-header">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Manage teachers, students, and school data</p>
+      </div>
+    </div>
 
     <section class="admin-section">
-      <h2>Core Actions</h2>
+      <h2>Teacher Management</h2>
       <div class="button-grid">
-        <button onclick="window.location.href='admin-add-teacher.html'" class="btn"> Add Teacher</button>
-        <button onclick="window.location.href='admin-upload-students.html'" class="btn"> Upload Student Data</button>
-        <button onclick="window.location.href='admin-view-students.html'" class="btn"> Generate Student Report Card</button>
-        <button onclick="window.location.href='admin-view-teachers.html'" class="btn"> View All Teachers</button>
-        <button onclick="window.location.href='admin-assign-teacher.html'" class="btn"> Assign Subject Teacher</button>
-        
-        <button onclick="window.location.href='admin-assign-class-teacher.html'" class="btn"> Assign Class Teacher</button>
-        </div>
+        <button onclick="window.location.href='admin-add-teacher.html'" class="btn">
+          Add Teacher
+        </button>
+        <button onclick="window.location.href='admin-view-teachers.html'" class="btn">
+          View All Teachers
+        </button>
+        <button onclick="window.location.href='admin-assign-teacher.html'" class="btn">
+          Assign Subject Teacher
+        </button>
+        <button onclick="window.location.href='admin-assign-class-teacher.html'" class="btn">
+          Assign Class Teacher
+        </button>
+      </div>
     </section>
+
+    <section class="admin-section">
+      <h2>Student Management</h2>
+      <div class="button-grid">
+        <button onclick="window.location.href='admin-upload-students.html'" class="btn">
+          Upload Student Data
+        </button>
+        <button onclick="window.location.href='admin-view-students.html'" class="btn">
+          Student Report Cards
+        </button>
+      </div>
+    </section>
+
   </main>
 
   <script src="../scripts/auth-check.js"></script>

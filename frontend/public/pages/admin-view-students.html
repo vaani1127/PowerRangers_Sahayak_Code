@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Students - Sahayak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -13,18 +16,20 @@
       <h1> Generate Student Report card</h1>
 
       <section class="admin-section">
-        <div class="form-group">
-          <label for="class-filter">Class:</label>
-          <select id="class-filter">
-            <option value="">All Classes</option>
-          </select>
-
-          <label for="section-filter">Section:</label>
-          <select id="section-filter" disabled>
-            <option value="">All Sections</option>
-          </select>
-
-          <button id="filter-btn" class="btn">Filter</button>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; margin-bottom:16px;">
+          <div class="form-group" style="margin:0; flex:1; min-width:160px;">
+            <label for="class-filter">Class</label>
+            <select id="class-filter">
+              <option value="">All Classes</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin:0; flex:1; min-width:160px;">
+            <label for="section-filter">Section</label>
+            <select id="section-filter" disabled>
+              <option value="">All Sections</option>
+            </select>
+          </div>
+          <button id="filter-btn" class="btn" style="height:42px; align-self:flex-end;">Filter</button>
           <!--  New button -->
           <!-- Commented out: download ZIP button (kept for future use)
           <button id="download-class-reports-btn" class="btn btn-secondary">📦 Download Class Report ZIP</button>
@@ -33,7 +38,7 @@
 
         <div id="students-container" class="data-card">
           <h2 class="data-title">All Students</h2>
-          <table id="students-table" class="styled-table">
+          <table id="students-table" class="data-table">
             <thead>
               <tr>
                 <!-- <th>ID</th> -->
