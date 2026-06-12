@@ -1,4 +1,4 @@
-// Runs immediately — apply saved theme before paint to avoid flash
+﻿// Runs immediately - apply saved theme before paint to avoid flash
 (function () {
   const saved = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

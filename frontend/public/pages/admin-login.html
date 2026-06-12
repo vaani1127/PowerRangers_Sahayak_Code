@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login — Sahayak</title>
+  <title>Admin Login - Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         <span class="login-brand-name">Sahayak</span>
       </div>
       <h2>School administration made simple</h2>
-      <p>Manage teachers, assign classes, upload student data, and generate reports — all from one place.</p>
+      <p>Manage teachers, assign classes, upload student data, and generate reports - all from one place.</p>
       <ul class="login-features">
         <li><span class="feat-icon">👩‍🏫</span> Add and manage teachers</li>
         <li><span class="feat-icon">🔗</span> Assign subject & class teachers</li>
@@ -37,7 +37,7 @@
 
         <div class="demo-creds">
           <strong>Demo Credentials</strong>
-          <p>Email: <span>admin1@school.com</span></p>
+          <p>Email: <span>admin1@example.com</span></p>
           <p>Password: <span>securepassword123</span></p>
           <button type="button" class="btn demo-fill-btn" id="fill-demo-btn">↗ Use demo credentials</button>
         </div>
@@ -80,7 +80,7 @@
     });
 
     document.getElementById('fill-demo-btn').addEventListener('click', () => {
-      document.getElementById('email').value = 'admin1@school.com';
+      document.getElementById('email').value = 'admin1@example.com';
       pw.type = 'text';
       pw.value = 'securepassword123';
       eyeEl.innerHTML = eyeOff;

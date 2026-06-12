@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teacher Login — Sahayak</title>
+  <title>Teacher Login - Sahayak</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         <span class="login-brand-name">Sahayak</span>
       </div>
       <h2>Your AI-powered teaching companion</h2>
-      <p>Everything a teacher needs — syllabus tracking, AI content generation, attendance, and student worksheets.</p>
+      <p>Everything a teacher needs - syllabus tracking, AI content generation, attendance, and student worksheets.</p>
       <ul class="login-features">
         <li><span class="feat-icon">📚</span> Track syllabus chapter-by-chapter</li>
         <li><span class="feat-icon">✦</span> Generate lessons, questions & MCQs with AI</li>
@@ -37,8 +37,17 @@
 
         <div class="demo-creds">
           <strong>Demo Credentials</strong>
-          <p>Email: <span>rohit.kapoor@school.com</span></p>
-          <p>Password: <span>hashedpw1</span></p>
+          <div class="form-group" style="margin:10px 0 8px;">
+            <select id="demo-select" style="font-size:0.82rem;">
+              <option value="rohit.kapoor@school.com|hashedpw1">Rohit Kapoor</option>
+              <option value="anjali.singh@school.com|hashedpw2">Anjali Singh</option>
+              <option value="vikas.nair@school.com|hashedpw3">Vikas Nair</option>
+              <option value="meera.bhat@school.com|hashedpw4">Meera Bhat</option>
+              <option value="kiran.patel@school.com|hashedpw5">Kiran Patel</option>
+              <option value="suresh.reddy@school.com|hashedpw6">Suresh Reddy</option>
+              <option value="rina.das@school.com|hashedpw7">Rina Das</option>
+            </select>
+          </div>
           <button type="button" class="btn demo-fill-btn" id="fill-demo-btn">↗ Use demo credentials</button>
         </div>
 
@@ -80,9 +89,10 @@
     });
 
     document.getElementById('fill-demo-btn').addEventListener('click', () => {
-      document.getElementById('email').value = 'rohit.kapoor@school.com';
+      const [email, password] = document.getElementById('demo-select').value.split('|');
+      document.getElementById('email').value = email;
       pw.type = 'text';
-      pw.value = 'hashedpw1';
+      pw.value = password;
       eyeEl.innerHTML = eyeOff;
     });
   </script>

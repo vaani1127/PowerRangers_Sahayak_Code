@@ -1,4 +1,4 @@
-function skeletonTrackers(n) {
+﻿function skeletonTrackers(n) {
   return Array.from({ length: n }, () => `
     <div class="tracker-card">
       <div class="tracker-header">
@@ -99,7 +99,7 @@ async function loadSyllabusTrackers() {
 
     // Build HTML
     const syllabusHTML = trackers.map(t => {
-      const label = `${t.full_class_name} — ${t.subject_name}`;
+      const label = `${t.full_class_name} - ${t.subject_name}`;
       const pct = Number(t.percentage) || 0;
       return `
         <a href="/pages/syllabus-detail.html?id=${t.teacher_assignment_id}" class="tracker-link">
@@ -116,7 +116,7 @@ async function loadSyllabusTrackers() {
     }).join('');
 
     const submissionHTML = trackers.map(t => {
-      const label = `${t.full_class_name} — ${t.subject_name}`;
+      const label = `${t.full_class_name} - ${t.subject_name}`;
       return `
         <a href="/pages/worksheet-submissions.html?id=${t.teacher_assignment_id}&name=${encodeURIComponent(label)}" class="tracker-link">
           <div class="tracker-card fade-in">
